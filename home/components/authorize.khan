@@ -1,0 +1,8 @@
+
+
+
+<?php
+	if(!isset($_SESSION['current_loggedin_user'])){
+		header('location:login');	
+	}
+?>

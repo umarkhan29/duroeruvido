@@ -1,0 +1,22 @@
+<?php include_once('home/components/authorize.khan'); ?>
+<section class="content-top-margin page-title page-title-small bg-gray">
+            <div class="container">
+               
+                    <div class="col-lg-8 col-md-7 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+                        <!-- page title -->
+                        <h1 class="black-text">Welcome <?php echo $_SESSION['current_loggedin_user'];?></h1>
+                        <!-- end page title -->
+						<div class="breadcrumb"?
+						<ul>
+                            <li><a href="productupload">Upload Product</a></li>
+                            <li><a href="#">Delete Product</a></li>
+							<li><a href="logout">Logout</a></li>
+							
+                            
+                        </ul>
+						</div>
+                    </div>
+                    
+                
+            </div>
+ </section>

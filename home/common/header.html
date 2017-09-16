@@ -1,0 +1,239 @@
+<?php
+ob_start();
+	include_once('config.khan');
+	include_once(COMPONENTS.SESSION);
+	include_once(COMPONENTS.CONNECT);
+	
+	
+//getting cart products from DB					
+			$_SESSION['product_name']="";
+			$count=0;
+				if(isset($_SESSION['id'])){
+					if($_SESSION['id']>1){
+						$count=0;
+						$query="SELECT * FROM `products` WHERE `id`= ";
+						$flag=0; //for checking first element of cart item in session array
+						foreach($_SESSION as $key => $val){
+							if(preg_match("%^['cart_product_']{13,13}[0-9]{1,2}$%",$key)){
+									if($flag!=0){
+										$query.=" or `id` = ";
+									}
+									$query.=$val;
+									$flag=1;
+								
+							}
+						}
+							
+						if($cart_items=mysqli_query($dbconn,$query)){
+								while($row = mysqli_fetch_assoc($cart_items)){
+										$cart_widget[] = array(
+											'NAME'				=>	$row['name'],
+											'PATH'				=>	$row['img1'],
+											'ID'				=>	$row['id'],
+											'PRICE'			=>	$row['price'],
+											
+										);
+												
+										$count=$count+1;
+										$_SESSION['product_name'].=	"ID : ".$row['id']."<br>"."Product : ".$row['name'].",<br><br>";
+								}			
+						}
+								
+				}
+			}
+?>
+<!doctype html>
+<html class="no-js" lang="en">
+    
+<head>
+		<meta name="msvalidate.01" content="DFA0A3DF182E3C98147D4668C1BD06C1" />
+        <title>Duro e Ruvido</title>
+        <meta name="description" content="E-Commerece site (Kashmir)">
+		
+		
+        <meta name="keywords" content="E-Commerece site (Kashmir), Shopping, T_Shirts, Designs, Clothing, Discount, Attractive, Comfort">
+        <meta charset="utf-8">
+        <meta name="author" content="Duro e Ruvido">
+		
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <!-- favicon -->
+       <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+       
+        <!-- animation --> 
+        <link rel="stylesheet" href="css/animate.css" />
+        <!-- bootstrap --> 
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <!-- et line icon --> 
+        <link rel="stylesheet" href="css/et-line-icons.css" />
+        <!-- font-awesome icon -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <!-- revolution slider -->
+        <link rel="stylesheet" href="css/extralayers.css" />
+        <link rel="stylesheet" href="css/settings.css" />
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <!-- owl carousel -->
+		
+        <link rel="stylesheet" href="css/owl.carousel.css" />
+        <link rel="stylesheet" href="css/owl.transitions.css" />
+        <link rel="stylesheet" href="css/full-slider.css" />
+        <!-- text animation -->
+        <link rel="stylesheet" href="css/text-effect.css" />
+        <!-- hamburger menu  -->
+        <link rel="stylesheet" href="css/menu-hamburger.css" />
+        <!-- common -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- responsive -->
+        <link rel="stylesheet" href="css/responsive.css" />
+        <!--[if IE]>
+            <link rel="stylesheet" href="css/style-ie.css" />
+        <![endif]-->
+        <!--[if IE]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+	
+        <!-- navigation panel -->
+        <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom bg-white shop-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+				<div style="color:red; z-index:10; position:absolute;"> This site is under development.</div>
+                    <!-- logo -->
+                    <div class="col-md-2 pull-left"><a class="logo-light" href="index"><img alt="" src="images/logo-light.png" class="logo" /></a><a class="logo-dark" href="index.php"><img alt="" src="images/logo-light.png" class="logo" /></a></div>
+                    <!-- end logo -->
+                    <!-- search and cart  -->
+                    <div class="col-md-2 no-padding-left search-cart-header pull-right">
+                        <div id="top-search">
+                            <!-- nav search -->
+                            <a href="#search-header" class="header-search-form"><i class="fa fa-search search-button"></i></a>
+                            <!-- end nav search -->
+                        </div>
+                        <!-- search input-->
+                        <form id="search-header"  method="POST" action="search" class="mfp-hide search-form-result">
+                            <div class="search-form position-relative">
+                                <button type="submit" class="fa fa-search close-search search-button"></button>
+                                <input type="text" name="search" class="search-input" placeholder="Enter your keywords..." autocomplete="on">
+                            </div>
+                        </form>
+                        <!-- end search input -->
+						
+						
+						
+						 <!-- Cart Start -->
+                        <div class="top-cart">
+                            <!-- nav shopping bag -->
+                            <a href="#" class="shopping-cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <div class="subtitle">(<?php echo $count; ?>) Items</div>
+                            </a>
+                            <!-- end nav shopping bag -->
+                            <!-- shopping bag content -->
+                            <div class="cart-content">
+							<?php for($i=0; $i<$count; $i++){?>
+                                <ul class="cart-list">
+                                    <li>
+                                        <a title="Remove item" class="remove" href="#">
+										<form action="cart" method="POST">
+											<input type="hidden" name="remove_cart_id" value="<?php echo $cart_widget[$i]['ID']; ?>" />
+											
+											<button name="removeitembtn" type="submit">×</button>
+										</form>
+										</a>
+										
+                                        <a href="#">
+                                            <img width="90" height="90" alt="" src="images/products/<?php echo $cart_widget[$i]['PATH']; ?>"><?php echo $cart_widget[$i]['NAME']; ?>
+                                        </a>
+                                        <span class="quantity">  <span class="amount"><?php echo $cart_widget[$i]['PRICE']; ?> Rs</span></span>
+                                        <a href="productrdr?product_id=<?php echo $cart_widget[$i]['ID']; ?>">View </a>
+                                    </li>
+                                </ul>
+								<?php } ?>
+                                <p class="total"><?php if($count>0) echo "Product Price is applicable to single quantity"; else echo "Your Cart is Empty" ?></p>
+                                <p class="buttons">
+                                    <a href="cart" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">View Cart</a>
+                                    <a href="checkout" class="btn btn-very-small-white no-margin-bottom margin-seven no-margin-right pull-right">Checkout</a>
+                                </p>
+                            </div>
+                            <!-- end shopping bag content -->
+                        </div>
+						 <!-- end cart -->
+                    </div>
+                    <!-- end search and cart  -->
+					
+					
+                    <!-- toggle navigation -->
+                    <div class="navbar-header col-sm-8 col-xs-2 pull-right">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    </div>
+                    <!-- toggle navigation end -->
+                    <!-- main menu -->
+                    <div class="col-md-8 no-padding-right accordion-menu text-right">
+                        <div class="navbar-collapse collapse">
+                            <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
+                                <!-- menu item -->
+                                <li class="dropdown panel"><a href="index">Home</a></li>                     
+                                    <!-- sub menu -->
+                                    
+                                    <!-- end sub menu -->
+                                </li>
+                                <!-- end menu item -->
+                                <!-- menu item -->
+                                                                <!-- menu item -->
+                                <li class="dropdown panel"><a href="#collapse3" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Men<i class="fa fa-angle-down"></i></a>
+                                    <!-- sub menu -->
+                                    <ul id="collapse3" class="dropdown-menu mega-menu panel-collapse collapse mega-menu-full">
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3">
+                                            <!-- sub menu item  -->
+                                            <ul>
+                                                <li class="dropdown-header"></li>
+                                                <li><a href="tshirts">T-Shirts</a></li>
+                                                <li><a href="soon">Other</a></li>
+                                              
+                                            </ul>
+                                            <!-- end sub menu item  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+                                       
+                                        
+                                        <!-- end sub menu column  -->
+                                    </ul>
+                                    <!-- end sub menu -->
+                                </li>
+                                <!-- end menu item -->
+								
+								  <!-- menu item -->
+                                <li class="dropdown panel"><a href="commingdesigns">Up Comming Designs</a></li>
+                                <!-- end menu item -->
+								
+                                <!-- menu item -->
+                                <li class="dropdown panel"><a href="soon">Accessories</a></li>
+                                <!-- end menu item -->
+                                
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end main menu -->
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation panel -->
+		

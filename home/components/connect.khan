@@ -1,0 +1,5 @@
+<?php
+    $dbconn=mysqli_connect('localhost','root','') or die('could not connect');
+	mysqli_select_db($dbconn,MY_DB) or die('database error');
+?>
+	

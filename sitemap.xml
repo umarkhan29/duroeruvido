@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://duroeruvido.com/</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/index</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/index.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/cart</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/checkout</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/tshirts</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/soon</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://duroeruvido.com/commingdesigns</loc>
+  <priority>0.80</priority>
+</url>
+
+</urlset>

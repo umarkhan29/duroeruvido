@@ -1,0 +1,13 @@
+<?php
+define('COMMON','home/common/');
+define('COMPONENTS','home/components/');
+define('CATALOG','home/catalog/');
+define('HEADER','header.html');
+define('FOOTER','footer.html');
+define('WEB_MODE','0');
+define('DEVELOPMENT_MODE','E_ALL');
+define('CONNECT','connect.khan');
+define('MY_DB','duroeruvido');
+define('SESSION','session.khan');
+
+?>
