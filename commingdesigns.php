@@ -21,56 +21,41 @@
             </div>
         </section>
         <!-- end head section -->
+<?php
+//Fetching popular destinations
+ $query = "SELECT * FROM `upcomingdesigns` order by `id` desc LIMIT 9 ";
+			if($result = mysqli_query($dbconn,$query)){
+				$upcomingdesigns;
+				$count=0;
+				while($row = mysqli_fetch_assoc($result)){
+					$upcomingdesigns[] = array(
+							
+							'ID'			=>	$row['id'],
+							'PATH' 			=> 	$row['imgpath'],
+							'TITLE' 		=> 	$row['title'],
+							'DESCRIPTION' 	=> 	$row['desc']
+						);
+						 $count=$count+1;
+						
+				}
+				
+			}
+			else{
+				echo mysqli_error($dbconn);
+			}
 
+?>
         <!-- content section -->
         <section class="wow fadeIn">
             <div class="container">
                 <div class="row zoom-gallery">
+				<?php for($i=0;$i<9;$i++){ ?>
                     <div class="col-md-4 col-sm-6 wow fadeIn">
                         <!-- photo item -->
-                        <a href="images/fashion-photoshots04.jpg"><img src="images/fashion-photoshots04.jpg" alt="" class="project-img-gallery"></a>
+                        <a href="<?php echo $upcomingdesigns[$i]['PATH']; ?>"><img src="<?php echo $upcomingdesigns[$i]['PATH']; ?>" alt="" class="project-img-gallery"></a>
                         <!-- end photo item -->
                     </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-photoshots01.jpg"><img src="images/fashion-photoshots01.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-photoshots06.jpg"><img src="images/fashion-photoshots06.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-photoshots08.jpg"><img src="images/fashion-photoshots08.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-photoshots03.jpg"><img src="images/fashion-photoshots03.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-model07.jpg"><img src="images/fashion-model07.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-model09.jpg"><img src="images/fashion-model09.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-6 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-model03.jpg"><img src="images/fashion-model03.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
-                    <div class="col-md-4 col-sm-12 wow fadeIn">
-                        <!-- photo item -->
-                        <a href="images/fashion-model02.jpg"><img src="images/fashion-model02.jpg" alt="" class="project-img-gallery"></a>
-                        <!-- end photo item -->
-                    </div>
+                 <?php } ?> 
                 </div>
             </div>
         </section>
