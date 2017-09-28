@@ -9,7 +9,8 @@
 						<div class="breadcrumb"?
 						<ul>
                             <li><a href="productupload">Upload Product</a></li>
-                            <li><a href="#">Delete Product</a></li>
+                            <li><a href="deleteproducts">Delete Product</a></li>
+							<li><a href="uploadupcomingdesign">Upload Upcomming Designs</a></li>
 							<li><a href="logout">Logout</a></li>
 							
                             
