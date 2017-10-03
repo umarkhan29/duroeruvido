@@ -28,6 +28,7 @@
 							$type=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['type']))));
 							$price=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['price']))));
 							$desc=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['desc']))));
+							$productfor=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['productfor']))));
 							$material=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['material']))));
 							$quantity=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['quantity']))));
 							$design=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['design']))));
@@ -79,7 +80,7 @@
 							move_uploaded_file($_FILES['img3']['tmp_name'],$filepath);
 				
 						
-							if(mysqli_query($dbconn,"INSERT INTO `products`(`name`, `type`, `material`, `design`, `img1`, `img2`, `img3`, `addedby`, `price`, `quantity`, `desc`,`size`) VALUES ('$oname','$type','$material','$design','$img1','$img2','$img3','$user','$price','$quantity','$desc','$size')")){
+							if(mysqli_query($dbconn,"INSERT INTO `products`(`name`, `type`, `material`, `design`, `img1`, `img2`, `img3`, `addedby`, `price`, `quantity`, `desc`,`size`,`productfor`) VALUES ('$oname','$type','$material','$design','$img1','$img2','$img3','$user','$price','$quantity','$desc','$size','$productfor')")){
 								echo '<div style="font-family:Arial, Helvetica, sans-serif; padding:5px;"> Product Uploaded Sucessfully !</div>';
 							}
 							else{
@@ -113,20 +114,48 @@
                             <input type="text" placeholder="Product Name" required name="name">
                             <!-- end input -->
 							
+							<select required name="productfor"  >
+								<option value="" disabled selected>--Product for-- </option>
+								<option value="Women">Women </option>
+								<option value="Men">Men</option>
+								<option value="Kids">Kids</option>
+								<option value="All">All</option>
+								<option value="Acessories">Acessories</option>
+							</select>
+							
+							
 							<select required name="type"  >
 								<option value="" disabled selected>--Select Product-- </option>
+								<option value="Kurties">Kurties </option>
 								<option value="T-Shirt">T-Shirt </option>
 								<option value="Jeans">Jeans</option>
+								<option value="Jogging">Jogging</option>
+								<option value="Trousers">Trousers</option>
+								<option value="Selvedge">Selvedge</option>
 								<option value="Jackets">Jackets</option>
+								<option value="Dress">Dress</option>
+								<option value="Party">Party</option>
+								<option value="Suits">Suits</option>
+								<option value="Knitwear">Knitwear</option>
+								<option value="Blazers">Blazers</option>
+								<option value="Shoes">Shoes</option>
+								<option value="Bag">Bag</option>
 							</select>
 							
 							
 							<select required name="material">
 								<option value="" disabled selected>--Select Material-- </option>
 								<option value="Cotton">Cotton</option>
-								<option value="Jeans">Jeans</option>
+								<option value="Jeans">Khadi</option>
 								<option value="Wool">Wool</option>
-								<option>Leather </option>
+								<option value="Jeans">Jeans</option>
+								<option value="Silk">Silk </option>
+								<option value="Denim">Denim </option>
+								<option value="Fur">Fur </option>
+								<option value="Nylon">Nylon </option>
+								<option value="Jute">Jute </option>
+								<option value="Velvet">Velvet </option>
+								
 							</select>
 							
 							
@@ -134,8 +163,15 @@
 								<option value="" disabled selected>--Select Design-- </option>
 								<option value="Round">Round </option>
 								<option value="Collar">Collar </option>
+								<option value="V Shape">V Shape</option>
 								<option value="Full Sleves">Full-Sleves </option>
 								<option value="Half Sleves">Half-Sleves </option>
+								<option value="Plain">Plain </option>
+								<option value="Printed">Printed</option>
+								<option value="Simple">Simple </option>
+								<option value="Multi Color">Multi Color</option>
+								<option value="Woven">Woven </option>
+								<option value="Knitted">Knitted</option>
 							</select>
 							
 							

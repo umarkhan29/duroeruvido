@@ -6,7 +6,7 @@
         <!-- head section -->
         <section class="page-title parallax3 parallax-fix page-title-large page-title-shop">
             <div class="opacity-light bg-dark-gray"></div>
-            <img class="parallax-background-img" src="images/parallax-img47.jpg" alt="" />
+            <img class="parallax-background-img" src="images/parallax-img16.jpg" alt="" />
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 wow fadeIn">
@@ -20,8 +20,8 @@
                     <div class="col-md-12 col-sm-12 breadcrumb text-uppercase margin-three no-margin-bottom wow fadeIn">
                         <!-- breadcrumb -->
                         <ul>
-                            <li class="white-text">Men</li>
-                            <li class="white-text">T-Shirts</li>
+                            <li class="white-text">Woen</li>
+                            <li class="white-text">Kurties</li>
                            
                         </ul>
                         <!-- end breadcrumb -->
@@ -42,7 +42,7 @@
                         <div class="shorting clearfix xs-margin-top-three">
                             <div class="col-md-8 col-sm-7 grid-nav">
                                 <a ><i class="fa fa-bars"></i></a>
-                               T-Shirts
+                               Kurties
                                
                             </div>
                             <div class="col-md-3 col-sm-5 pull-right">
@@ -59,7 +59,7 @@
                         <div class="product-listing margin-three">
 						<div id="tees">
 						<?php 
-							$query="SELECT * FROM `products` WHERE `type` = 'T-Shirt' and `productfor` = 'Men' order by `id` DESC ;";
+							$query="SELECT * FROM `products` WHERE `type` = 'kurties' and `productfor` = 'Women' order by `id` DESC ;";
 				
 							$products=mysqli_query($dbconn,$query) or die("db error");
 							$results="";
