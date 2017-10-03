@@ -14,8 +14,8 @@
                             <div class="slider-text-middle-main">
                                 <div class="slider-text-middle padding-left-right-px animated fadeInUp">
                                     <span class="owl-subtitle black-text">Season 2017</span>
-                                    <span class="owl-title black-text xs-margin-bottom-seven">Shopping With Style</span>
-                                    <a href="tshirts" class="highlight-button-dark btn margin-four">Check Collection</a>
+                                    <span class="owl-title black-text xs-margin-bottom-seven">Women Kurties</span>
+                                    <a href="womenkurties" class="highlight-button-dark btn margin-four">Check Collection</a>
                                 </div>
                             </div>
                         </div>
