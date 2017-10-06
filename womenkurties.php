@@ -20,7 +20,7 @@
                     <div class="col-md-12 col-sm-12 breadcrumb text-uppercase margin-three no-margin-bottom wow fadeIn">
                         <!-- breadcrumb -->
                         <ul>
-                            <li class="white-text">Woen</li>
+                            <li class="white-text">Women</li>
                             <li class="white-text">Kurties</li>
                            
                         </ul>
