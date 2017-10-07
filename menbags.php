@@ -21,7 +21,7 @@
                         <!-- breadcrumb -->
                         <ul>
                             <li class="white-text">Men</li>
-                            <li class="white-text">T-Shirts</li>
+                            <li class="white-text">Bags</li>
                            
                         </ul>
                         <!-- end breadcrumb -->
@@ -42,7 +42,7 @@
                         <div class="shorting clearfix xs-margin-top-three">
                             <div class="col-md-8 col-sm-7 grid-nav">
                                 <a ><i class="fa fa-bars"></i></a>
-								T-Shirts                      
+								Bags                       
                             </div>
                             <div class="col-md-3 col-sm-5 pull-right">
                                 <div class="select-style input-round med-input shop-shorting no-border">
@@ -58,7 +58,7 @@
                         <div class="product-listing margin-three">
 						
 						<?php 
-							$query="SELECT * FROM `products` WHERE `type` = 'T-Shirt' and (`productfor` = 'Men' or `productfor` = 'All') order by `id` DESC ;";
+							$query="SELECT * FROM `products` WHERE `type` = 'Bag' and (`productfor` = 'Men' or `productfor` = 'All') order by `id` DESC ;";
 				
 							$products=mysqli_query($dbconn,$query) or die("db error");
 							$results="";
