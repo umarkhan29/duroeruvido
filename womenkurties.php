@@ -38,7 +38,7 @@
                     
 					
 					
-                    <div class="col-md-9 col-sm-8 col-md-offset-1">
+                    <div class="class="col-md-12 text-center">
                         <div class="shorting clearfix xs-margin-top-three">
                             <div class="col-md-8 col-sm-7 grid-nav">
                                 <a ><i class="fa fa-bars"></i></a>
@@ -57,9 +57,9 @@
                             </div>
                         </div>
                         <div class="product-listing margin-three">
-						<div id="tees">
+						
 						<?php 
-							$query="SELECT * FROM `products` WHERE `type` = 'kurties' and `productfor` = 'Women' order by `id` DESC ;";
+							$query="SELECT * FROM `products` WHERE `type` = 'kurties' and (`productfor` = 'Women' or `productfor` = 'All') order by `id` DESC ;";
 				
 							$products=mysqli_query($dbconn,$query) or die("db error");
 							$results="";
@@ -87,25 +87,25 @@
 					?>
 						
                             <!-- shop item -->
-                            <div class="col-md-6 col-sm-6">
-                                <div class="home-product text-center position-relative overflow-hidden margin-ten no-margin-top">
-                                    <a href="productrdr?product_id=<?php echo $results[$i]['ID']; ?>"><img src="images/products/<?php echo $results[$i]['IMG1']; ?>" alt=""/></a>
-                                    <span class="product-name text-uppercase"><a href="productrdr?product_id=<?php echo $searchResults[$i]['ID']; ?>"><?php echo $results[$i]['NAME']; ?></a></span>
-                                    <span class="price black-text"><?php echo $results[$i]['PRICE']; ?></span>
-                                   
-                                    <div class="quick-buy">
-                                        <div class="product-share">
-                                            <form action="product" method="POST">
-												<input type="hidden" name="product_id" value="<?php echo $results[$i]['ID'];?>" /> 
-											<input type="submit" value="View" name="view"/>
-											</form>
-                                        </div>
-                                    </div>
+                           <div class="col-md-4 col-sm-4">
+                        <div class="home-product text-center position-relative overflow-hidden margin-ten no-margin-top">
+                            <a href="productrdr.php?product_id=<?php echo $results[$i]['ID'];?>"><img src="images/products/<?php echo $results[$i]['IMG1'];?>" alt=""/></a>
+                            <span class="product-name text-uppercase"><a href="productrdr.php?product_id=<?php echo $results[$i]['ID'];?>"><?php echo $results[$i]['NAME'];?></a></span>
+                            <span class="price black-text"><?php echo $results[$i]['PRICE'];?></span>
+                           
+                            <div class="quick-buy">
+                                <div class="product-share">
+                                    <form action="product" method="POST">
+										<input type="hidden" name="product_id" value="<?php echo $results[$i]['ID'];?>" />
+									<input type="submit" value="View" name="view"/>
+									</form>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                             <!-- end shop item -->
                            <?php } ?> 
-                        </div>
+                       
                        
                        </div> 
 					   

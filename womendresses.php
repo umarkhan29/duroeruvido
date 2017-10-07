@@ -6,7 +6,7 @@
         <!-- head section -->
         <section class="page-title parallax3 parallax-fix page-title-large page-title-shop">
             <div class="opacity-light bg-dark-gray"></div>
-            <img class="parallax-background-img" src="images/parallax-img40.jpg" alt="" />
+            <img class="parallax-background-img" src="images/parallax-img16.jpg" alt="" />
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 wow fadeIn">
@@ -20,8 +20,8 @@
                     <div class="col-md-12 col-sm-12 breadcrumb text-uppercase margin-three no-margin-bottom wow fadeIn">
                         <!-- breadcrumb -->
                         <ul>
-                            <li class="white-text">Men</li>
-                            <li class="white-text">T-Shirts</li>
+                            <li class="white-text">Women</li>
+                            <li class="white-text">Dresses</li>
                            
                         </ul>
                         <!-- end breadcrumb -->
@@ -42,7 +42,7 @@
                         <div class="shorting clearfix xs-margin-top-three">
                             <div class="col-md-8 col-sm-7 grid-nav">
                                 <a ><i class="fa fa-bars"></i></a>
-								T-Shirts                      
+								Dresses                               
                             </div>
                             <div class="col-md-3 col-sm-5 pull-right">
                                 <div class="select-style input-round med-input shop-shorting no-border">
@@ -58,7 +58,7 @@
                         <div class="product-listing margin-three">
 						
 						<?php 
-							$query="SELECT * FROM `products` WHERE `type` = 'T-Shirt' and (`productfor` = 'Men' or `productfor` = 'All') order by `id` DESC ;";
+							$query="SELECT * FROM `products` WHERE `type` = 'dress' and (`productfor` = 'Women' or `productfor` = 'All') order by `id` DESC ;";
 				
 							$products=mysqli_query($dbconn,$query) or die("db error");
 							$results="";
@@ -92,9 +92,6 @@
                             <span class="product-name text-uppercase"><a href="productrdr.php?product_id=<?php echo $results[$i]['ID'];?>"><?php echo $results[$i]['NAME'];?></a></span>
                             <span class="price black-text"><?php echo $results[$i]['PRICE'];?></span>
                            
-
-
-
                             <div class="quick-buy">
                                 <div class="product-share">
                                     <form action="product" method="POST">

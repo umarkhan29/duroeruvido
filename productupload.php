@@ -147,6 +147,8 @@
 								<option value="" disabled selected>--Select Material-- </option>
 								<option value="Cotton">Cotton</option>
 								<option value="Jeans">Khadi</option>
+								<option value="Leather">Leather</option>
+								<option value="Pashmina">Pashmina</option>
 								<option value="Wool">Wool</option>
 								<option value="Jeans">Jeans</option>
 								<option value="Silk">Silk </option>
@@ -155,6 +157,7 @@
 								<option value="Nylon">Nylon </option>
 								<option value="Jute">Jute </option>
 								<option value="Velvet">Velvet </option>
+								<option value="Wood">Wood </option>
 								
 							</select>
 							
