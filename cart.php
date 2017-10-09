@@ -3,7 +3,6 @@
 	require_once(COMPONENTS.CONNECT);
 ?>
 
-
  <!-- head section -->
         <section class="content-top-margin page-title page-title-small bg-gray">
             <div class="container">
@@ -11,6 +10,7 @@
                     <div class="col-lg-8 col-md-7 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
                         <!-- page title -->
                         <h1 class="black-text">Shopping Cart</h1>
+
                         <!-- end page title -->
                     </div>
                     <div class="col-lg-4 col-md-5 col-sm-12 breadcrumb text-uppercase wow fadeInUp xs-display-none" data-wow-duration="600ms">
@@ -26,11 +26,11 @@
         </section>
         <!-- end head section -->
 			<?php 
-			
+			$_SESSION['products_name']=""; 
 			//checkout
 			if(isset($_POST['checkout'])){
 				
-				 $_SESSION['product_name']=""; 
+				 $_SESSION['products_name']=""; 
 
 				$_SESSION['totalprice']=mysqli_real_escape_string($dbconn,trim(strip_tags(stripslashes($_POST['totalprice']))));;//cart total
 				foreach($_POST as $key => $val){
@@ -57,7 +57,7 @@
 							 $pitem=$pitem[1];
 							
 							if($pitem==$val){
-								 $_SESSION['product_name'].="  ( ID : ".$val.", Quantity : ".$pval." ) ---";
+								 $_SESSION['products_name'].="  ( ID : ".$val.", Quantity : ".$pval." ) ---";
 								 break;
 								}
 							}
@@ -191,6 +191,8 @@
 				}
 			header('location:cart');
 	}
+	
+	 
 ?>
 
 								
@@ -351,6 +353,8 @@
 		
 
 </script>
+
 <?php
+
 	include_once('home/common/footer.html');
 ?>

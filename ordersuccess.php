@@ -17,16 +17,16 @@ $price=$_POST["amount"];
 $txnid=$_POST["txnid"];
 $posted_hash=$_POST["hash"];
 $key=$_POST["key"];
-$product_name=$_SESSION['product_name'];
+$product_name=$_SESSION['product_name']."Quatntities : ".$_SESSION['products_name'];
 $email=$_POST["email"];
-$phone=$_POST["phone"];
-$shipping="address";
+echo $phones=$_POST["phone"];
+$shipping=$_POST["address1"]." ".$_POST["city"]." ".$_POST["zipcode"];
 
 
-if(mysqli_query($dbconn,"INSERT INTO `user_details` (`trans_id`,`name`,`product_name`,`email`,`price`,`phone`,`shipping_address`) VALUES ('$txnid','$name','$product_name','$email','$price','$phone','$shipping')")){
+if(mysqli_query($dbconn,"INSERT INTO `user_details` (`trans_id`,`name`,`product_name`,`email`,`price`,`phone`,`shipping_address`) VALUES ('$txnid','$name','$product_name','$email','$price','$phones','$shipping')")){
 		
 									//notifying admin about product sold
-									$message="The product: ".$product_name." is out sold to ".$name."<br />  Ensure it's delivery on time.";
+									$message="The product: ".$product_name." is out sold to ".$name."\n  Ensure it's delivery on time.\n Address :".$shipping ;
 												 
 													mail('umee909@gmail.com',"Product Sold",$message,"From:Duro-E-Ruvido");
 									
@@ -100,13 +100,14 @@ if(mysqli_query($dbconn,"INSERT INTO `user_details` (`trans_id`,`name`,`product_
 										
 								
 									
-								header('Refresh:17;url=index');
+								//header('Refresh:17;url=index');
 							
 		}
 		else{
 							
 				echo '<div style="width:80%;padding-top:50px; padding-bottom:60px; padding-left:20%; overflow:hidden; color:red; font-size:22px; background:#999999;">Something went		 				 wrong.Please Contact Site Adminstrator</div>';
 			echo mysqli_error($dbconn);	
+
 
 			}
 

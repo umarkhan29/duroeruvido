@@ -2,7 +2,29 @@
   <?php
 include_once('home/common/header.html');
   
-  
+ /*
+ 
+  production data 
+// Merchant key here as provided by Payu
+//$MERCHANT_KEY = "rjQUPktU";
+$MERCHANT_KEY = "q31XOExG";
+
+// Merchant Salt as provided by Payu
+//$SALT = "e5iIg1jwi8";
+$SALT = "Orcg6yoKtG";
+
+
+
+ //$PAYU_BASE_URL = "https://test.payu.in";
+  //$PAYU_BASE_URL = "https://secure.payu.in/_payment ";
+$PAYU_BASE_URL = "https://secure.payu.in/";
+
+$action = '';
+
+ */
+ 
+ 
+ 
 // Merchant key here as provided by Payu
 $MERCHANT_KEY = "rjQUPktU";
 //$MERCHANT_KEY = "q31XOExG";
@@ -57,7 +79,7 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
   } else {
   
   	$_SESSION['pay_phone']=$posted['phone'];
-	$_SESSION['pay_address']=$posted['address1'].$posted['city'].$posted['zipcode'];
+	$_SESSION['pay_address']=$posted['address1']." ".$posted['city']." ".$posted['zipcode'];
    
 	$hashVarsSeq = explode('|', $hashSequence);
     $hash_string = '';	
@@ -95,7 +117,7 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
     }
   </script>
   
-  
+
 <body onLoad="submitPayuForm()">
 <!-- head section -->
         <section class="content-top-margin page-title page-title-small bg-gray">
@@ -122,7 +144,6 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
 
         <section>
             <div class="container clearfix">
-
                 <div class="row margin-five no-margin-top">
                     <div class="col-md-5 col-sm-12 pull-left sm-margin-bottom-seven">
                         <p class="black-text font-weight-600 text-uppercase text-large">Give us your address so we can serve you</p>
