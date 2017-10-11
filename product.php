@@ -129,10 +129,10 @@ else{
                         <div class="col-md-8 col-sm-9 product-details-social no-padding">
                             <!-- social media sharing -->
                             <span class="black-text text-uppercase text-small vertical-align-middle margin-right-five">Share on</span>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
-                            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/sharer.php?u=http://duroeruvido.com/productrdr.php?product_id=<?php echo $product; ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href=" http://twitter.com/share?url=http://duroeruvido.com/productrdr.php?product_id=<?php echo $product; ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://plus.google.com/share?url=http://duroeruvido.com/productrdr.php?product_id=<?php echo $product; ?>" target="_blank"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/cws/share?url=http://duroeruvido.com/productrdr.php?product_id=<?php echo $product; ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
                             <!-- end social media sharing -->
                         </div>
                     </div>
